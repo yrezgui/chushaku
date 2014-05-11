@@ -1,0 +1,28 @@
+{
+  "name": "chushaku",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yrezgui/chushaku",
+  "authors": [
+    "Yacine Rezgui <rezgui.y@gmail.com>"
+  ],
+  "description": "Small project of notes web app mixing different technologies and APIs",
+  "keywords": [
+    "express",
+    "jade",
+    "stylus",
+    "angularjs",
+    "mongodb"
+  ],
+  "license": "Apache Licence v2",
+  "ignore": [
+    "node_modules",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.4.2",
+    "angular": "~1.2.16",
+    "angular-sanitize": "~1.2.16"
+  }
+}
