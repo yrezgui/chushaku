@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chushaku</title>
+    <link rel="stylesheet" href="css/pure.css">
+    <link rel="stylesheet" href="css/styles/app.css">
+    <script>
+      window.config = {
+        apiUrl: 'http://localhost:5050/api'
+      }
+      
+    </script>
+  </head>
+  <body ng-app="chushakuApp">
+    <div ng-view></div>
+    <script src="deps/angular.js"></script>
+    <script src="deps/angular-animate.js"></script>
+    <script src="deps/angular-route.js"></script>
+    <script src="deps/angular-resource.js"></script>
+    <script src="deps/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="app/home/home.js"></script>
+    <script src="components/task/task.js"></script>
+  </body>
+</html>
