@@ -32,21 +32,6 @@ body
   bottom: 0
   right: 0
 
-.task-content,  .task-input input
-  font-size: 20px
-  color: #ffffff
-  padding: 1em 1.6em
-  font-weight: 100
-  line-height: 1em
-
-.task-content.done
-  text-decoration: line-through
-  color: rgba(255, 255, 255, 0.5)
-
-.task-content.edit
-  border-radius(5px)
-  border: 1px solid rgba(255, 255, 255, 0.5)
-
 .task-content.ng-move,
 .task-content.ng-enter,
 .task-content.ng-leave
@@ -61,6 +46,21 @@ body
 .task-content.ng-move.ng-move-active,
 .task-content.ng-enter.ng-enter-active
   opacity: 1
+
+.task-content,  .task-input input
+  font-size: 20px
+  color: #ffffff
+  padding: 1em 1.6em
+  font-weight: 100
+  line-height: 1em
+
+.task-content.done
+  text-decoration: line-through
+  color: rgba(255, 255, 255, 0.5)
+
+.task-content.edit
+  border-radius(5px)
+  border: 1px solid rgba(255, 255, 255, 0.5)
 
 .task-content input
   position: relative
