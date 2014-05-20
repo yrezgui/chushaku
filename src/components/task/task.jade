@@ -1,0 +1,3 @@
+.task-content(ng-class="{done: task.done}")
+  input(type="checkbox", ng-model="task.done")
+  span.title(ng-click="editTask(task)") {{task.title}}
