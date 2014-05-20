@@ -1,13 +1,13 @@
 .tasks-container
   .tasks
-    form.task-input(ng-submit="addTask()")
-      span.input-extra.input-help(ng-class="{show: inputHelp}") Press enter to add it
+    form.task-input(ng-submit="addTask()", ng-mouseleave="onBlur()", ng-mouseenter="onFocus()")
+      span.input-extra.input-help(ng-show="!displaySearch && inputHelp", ng-click="addTask()") Click here to add it
 
       span.input-extra.input-search(ng-show="!displaySearch", ng-click="showSearch()") Search
       span.input-extra.input-add-task(ng-show="displaySearch", ng-click="showAddTask()") Add task
 
-      input(name="title", type="text", ng-model="newTaskTitle", placeholder="Write your task...", ng-blur="onBlur()", ng-focus="onFocus()", ng-show="!displaySearch")
-      input(name="title", type="text", ng-model="taskFilter", placeholder="Search tasks...", ng-show="displaySearch")
+      input(type="text", ng-model="newTaskTitle", placeholder="Write your task...", ng-show="!displaySearch")
+      input(type="text", ng-model="taskFilter", placeholder="Search tasks...", ng-show="displaySearch")
 
     div
       task(ng-repeat-start="task in tasks | filter:taskFilter", model="task", ng-hide="currentlyEdited === task", on-edit="editTask")
