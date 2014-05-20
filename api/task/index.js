@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  newTask.create(req.body, function (err, task) {
+  Task.create(req.body, function (err, task) {
     if(err) {
       return res.send(500);
     }
