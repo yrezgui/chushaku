@@ -1,12 +1,12 @@
 
 <div class="tasks-container">
   <div class="tasks">
-    <form ng-submit="addTask()" class="task-input">
-      <p ng-class="{show: inputHelp}" class="input-help">Press enter to add it</p>
-      <input name="title" type="text" ng-model="newTaskTitle" placeholder="Write your task..." ng-blur="inputHelp = false;" ng-focus="inputHelp = true; currentlyEdited = null;"/>
+    <form ng-submit="addTask()" class="task-input"><span ng-class="{show: inputHelp}" class="input-extra input-help">Press enter to add it</span><span ng-show="!displaySearch" ng-click="showSearch()" class="input-extra input-search">Search</span><span ng-show="displaySearch" ng-click="showAddTask()" class="input-extra input-add-task">Add task</span>
+      <input name="title" type="text" ng-model="newTaskTitle" placeholder="Write your task..." ng-blur="onBlur()" ng-focus="onFocus()" ng-show="!displaySearch"/>
+      <input name="title" type="text" ng-model="taskFilter" placeholder="Search tasks..." ng-show="displaySearch"/>
     </form>
     <div>
-      <task ng-repeat-start="task in tasks" model="task" ng-hide="currentlyEdited === task" on-edit="editTask"></task>
+      <task ng-repeat-start="task in tasks | filter:taskFilter" model="task" ng-hide="currentlyEdited === task" on-edit="editTask"></task>
       <task-editor ng-repeat-end="ng-repeat-end" model="task" ng-if="currentlyEdited === task" on-cancel="cancelEdition"></task-editor>
     </div>
   </div>
