@@ -45,6 +45,10 @@
     };
 
     $scope.addTask = function addTask() {
+      if(!$scope.newTaskTitle) {
+        return;
+      }
+      
       var newTask = new TaskModel({
         title: $scope.newTaskTitle,
         body: '',
