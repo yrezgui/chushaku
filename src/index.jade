@@ -8,11 +8,6 @@ html
     each val in assets.styles
       link(rel="stylesheet", href=val)
 
-    script.
-      window.config = {
-        apiUrl: '#{config.webServer.protocol}://#{config.webServer.host}:#{config.webServer.port}/#{config.webServer.api}'
-      }
-
   body(ng-app="chushakuApp")
 
     div(ng-view)

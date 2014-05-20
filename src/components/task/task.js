@@ -2,15 +2,11 @@
   'use strict';
 
   global.angular.module('components.task', [])
-    // Configuration
-    .constant('ApiConfig', {
-      BASE_URL: global.config.apiUrl
-    })
 
     // Resource
-    .factory('TaskModel', ['$resource', 'ApiConfig', function TaskModel($resource, ApiConfig) {
+    .factory('TaskModel', ['$resource', function TaskModel($resource) {
 
-      var taskResource = $resource(ApiConfig.BASE_URL + '/tasks/:taskId',
+      var taskResource = $resource('/api/tasks/:taskId',
         {
           taskId: '@_id'
         },
