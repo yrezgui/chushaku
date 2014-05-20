@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Chushaku
+
+    //- link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,700", rel="stylesheet")
+    each val in assets.styles
+      link(rel="stylesheet", href=val)
+
+    script.
+      window.config = {
+        apiUrl: '#{config.webServer.protocol}://#{config.webServer.host}:#{config.webServer.port}/#{config.webServer.api}'
+      }
+
+  body(ng-app="chushakuApp")
+
+    div(ng-view)
+    
+    each val in assets.dependencies
+      script(src=val)
+
+    each val in assets.scripts
+      script(src=val)
