@@ -25,12 +25,15 @@
     };
 
     $scope.addTask = function addTask() {
-      $scope.tasks.push({
+      var newTask = new TaskModel({
         title: $scope.newTaskTitle,
         body: '',
         done: false
       });
-
+      
+      var promise = newTask.$create();
+      promise.then($scope.getTasks);
+      
       $scope.newTaskTitle = '';
     };
 
