@@ -18,4 +18,7 @@ app.use(express.static(__dirname + '/www'));
 
 app.listen(config.webServer.port);
 
+console.log(config);
+console.log(process.env);
+
 module.exports = app;
