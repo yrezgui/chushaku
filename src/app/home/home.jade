@@ -1,0 +1,9 @@
+.tasks-container
+  .tasks
+    form.task-input(ng-submit="addTask()")
+      p.input-help(ng-class="{show: inputHelp}") Press enter to add it
+      input(name="title", type="text", ng-model="newTaskTitle", placeholder="Write your task...", ng-blur="inputHelp = false;", ng-focus="inputHelp = true; currentlyEdited = null;")
+
+    div
+      task(ng-repeat-start="task in tasks", model="task", ng-hide="currentlyEdited === task", on-edit="editTask")
+      task-editor(ng-repeat-end, model="task", ng-if="currentlyEdited === task", on-cancel="cancelEdition")
