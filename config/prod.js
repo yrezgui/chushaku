@@ -6,11 +6,11 @@ config.webserver = {
 
 config.webServer = {
   port: process.env.PORT,
-  host: 'domain.com',
+  host: process.env.HOSTURL,
   protocol: 'http',
   api: 'api'
 };
 
 config.database = {
-  mongoUrl: 'mongodb://distanthost.com/chushaku'
+  mongoUrl: process.env.MONGOURL
 };
