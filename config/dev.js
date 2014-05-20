@@ -30,10 +30,7 @@ config.path = {
 };
 
 config.webServer = {
-  port: 5050,
-  host: 'localhost',
-  protocol: 'http',
-  api: 'api'
+  port: 5050
 };
 
 config.database = {
