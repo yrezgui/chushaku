@@ -36,3 +36,9 @@ config.webServer = {
 config.database = {
   mongoUrl: 'mongodb://localhost/chushaku'
 };
+
+config.twilio = {
+  accountSid: 'accountSid',
+  authToken: 'authToken',
+  phonenumber: '+123456789'
+};
