@@ -24,6 +24,26 @@
       $scope.currentlyEdited = null;
     };
 
+    $scope.onBlur = function onBlur() {
+      $scope.inputHelp = false;
+    };
+
+    $scope.onFocus = function onFocus() {
+      $scope.inputHelp        = true;
+      $scope.currentlyEdited  = null;
+    };
+
+    $scope.showSearch = function showSearch() {
+      $scope.taskFilter = '';
+      $scope.displaySearch = true;
+    };
+
+    $scope.showAddTask = function showAddTask() {
+      $scope.newTaskTitle   = '';
+      $scope.taskFilter     = '';
+      $scope.displaySearch  = false;
+    };
+
     $scope.addTask = function addTask() {
       var newTask = new TaskModel({
         title: $scope.newTaskTitle,
@@ -33,7 +53,7 @@
       
       var promise = newTask.$create();
       promise.then($scope.getTasks);
-      
+
       $scope.newTaskTitle = '';
     };
 
