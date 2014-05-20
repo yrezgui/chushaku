@@ -1,0 +1,9 @@
+.task-content.edit
+  input.edit-title(type="text", ng-model="editTitle")
+
+  div.body
+    textarea(rows="5" placeholder="Write the content of your task...", ng-model="editBody")
+    span.toolbar
+      button.pure-button.pure-button-primary(ng-click="save()") Save
+      button.pure-button(ng-click="cancel()") Cancel
+    div.float-clear
